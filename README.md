@@ -6,14 +6,14 @@
     Maven
     Selenium
 
-## Задание :
+## Task :
 
 Написать UI - автотесты для следующих сайтов:
 
 https://testsheepnz.github.io/BasicCalculator.html  
 https://testsheepnz.github.io/random-number.html
 
-## Кейс №1
+## Case №1
 
 1. Открыть сайт https://testsheepnz.github.io/BasicCalculator.html
 2. Проскроллить вниз до конца
@@ -24,7 +24,7 @@ https://testsheepnz.github.io/random-number.html
 7. Нажать на кнопку «Calculate»
 8. Проверить, что в поле ответа (Answer) значение равно «-1»
 
-## Кейс №2
+## Case №2
 
 1. Открыть сайт https://testsheepnz.github.io/BasicCalculator.html
 2. Проскроллить вниз до конца
@@ -35,7 +35,7 @@ https://testsheepnz.github.io/random-number.html
 7. Нажать на кнопку «Calculate»
 8. Проверить, что в поле ответа (Answer) значение равно «gsbu»
 
-## Кейс №3
+## Case №3
 
 1. Открыть сайт https://testsheepnz.github.io/random-number.html
 2. Проскроллить вниз до конца
@@ -45,13 +45,13 @@ https://testsheepnz.github.io/random-number.html
 6. Нажать на кнопку «Submit»
 7. Проверить, что появилось сообщение «string: Not a number!»
 
-## Среда разработки :
+## Development Environment :
 
     Инструменты разработки : java 21, Selenium
     IDE : IntelliJ IDEA 2023.2.3 (Community Edition)
     ОС : Microsoft Windows 10 Pro
 
-## Код :
+## Code :
 
        - Исходный код выполняет тесты для каждого кейса, описанных выше
 
