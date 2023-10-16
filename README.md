@@ -13,7 +13,7 @@
 https://testsheepnz.github.io/BasicCalculator.html  
 https://testsheepnz.github.io/random-number.html
 
-## Case №1
+## Case №1 :
 
 1. Открыть сайт https://testsheepnz.github.io/BasicCalculator.html
 2. Проскроллить вниз до конца
@@ -24,7 +24,7 @@ https://testsheepnz.github.io/random-number.html
 7. Нажать на кнопку «Calculate»
 8. Проверить, что в поле ответа (Answer) значение равно «-1»
 
-## Case №2
+## Case №2 :
 
 1. Открыть сайт https://testsheepnz.github.io/BasicCalculator.html
 2. Проскроллить вниз до конца
@@ -35,7 +35,7 @@ https://testsheepnz.github.io/random-number.html
 7. Нажать на кнопку «Calculate»
 8. Проверить, что в поле ответа (Answer) значение равно «gsbu»
 
-## Case №3
+## Case №3 :
 
 1. Открыть сайт https://testsheepnz.github.io/random-number.html
 2. Проскроллить вниз до конца
