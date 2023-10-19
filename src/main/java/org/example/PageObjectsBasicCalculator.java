@@ -18,18 +18,45 @@ public class PageObjectsBasicCalculator {
         this.driver = driver;
     }
 
-    // Ищем и кликаем по выпадашке Build
+    // Ищем выпадашку Build
     @FindBy(xpath = "//*[contains(@id, 'selectBuild')]")
     private WebElement selectBuild;
 
+    // Ищем нужный элементт выпадашки Build
+    @FindBy(xpath = "//*[contains(@id, 'selectBuild')] //*[contains(@value, '%s')]")
+    private WebElement selectedBuildItem;
+
+    // Ищем первый input
+    @FindBy(xpath = "//*[contains(@id, 'number1Field')]")
+    private WebElement numberFirst;
+
+    // Ищем второй input
+    @FindBy(xpath = "//*[contains(@id, 'number2Field')]")
+    private WebElement numberSecond;
+
+    // Ищем выпадашку Operation
+    @FindBy(xpath = "//*[contains(@id, 'selectOperationDropdown')]")
+    private WebElement selectOperation;
+
+    // Ищем нужный элемент выпадашки Operation
+    @FindBy(xpath = "//*[contains(@id, 'selectOperationDropdown')] //*[contains(@value, '%s')]")
+    private WebElement selectedOperationItem;
+
+    // Ищем кнопку Calculate
+    @FindBy(xpath = "//*[contains(@id, 'calculateButton')]")
+    private WebElement calculateButton;
+
+    // Ищем поле Answer
+    @FindBy(xpath = "//*[contains(@id, 'numberAnswerField')]")
+    private WebElement numberAnswer;
+
+
+    // Кликаем по выпадашке Build
     public void selectBuildClick() {
         selectBuild.click();
     }
 
-    // Ищем и кликаем по нужному элементу выпадашки Build
-    @FindBy(xpath = "//*[contains(@id, 'selectBuild')] //*[contains(@value, '%s')]")
-    private WebElement selectedBuildItem;
-
+    // Кликаем по нужному элементу выпадашки Build
     public void selectedItemBuildClick(String value) {
         // Используем Duration для указания времени ожидания
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -39,34 +66,22 @@ public class PageObjectsBasicCalculator {
         itemToClick.click();
     }
 
-    // Ищем и вводим значение в первый input
-    @FindBy(xpath = "//*[contains(@id, 'number1Field')]")
-    private WebElement numberFirst;
-
+    // Вводим значение в первый input
     public void numberFirstInput(String input) {
         numberFirst.sendKeys(input);
     }
 
-    // Ищем и вводим значение во второй input
-    @FindBy(xpath = "//*[contains(@id, 'number2Field')]")
-    private WebElement numberSecond;
-
+    // Вводим значение во второй input
     public void numberSecondtInput(String input) {
         numberSecond.sendKeys(input);
     }
 
-    // Ищем и кликаем по выпадашке Operation
-    @FindBy(xpath = "//*[contains(@id, 'selectOperationDropdown')]")
-    private WebElement selectOperation;
-
+    // Кликаем по выпадашке Operation
     public void selectOperationClick() {
         selectOperation.click();
     }
 
-    // Ищем и кликаем по нужному элементу выпадашки Operation
-    @FindBy(xpath = "//*[contains(@id, 'selectOperationDropdown')] //*[contains(@value, '%s')]")
-    private WebElement selectedOperationItem;
-
+    // Кликаем по нужному элементу выпадашки Operation
     public void selectedItemOperationClick(String value) {
         // Используем Duration для указания времени ожидания
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -76,18 +91,12 @@ public class PageObjectsBasicCalculator {
         itemToClick.click();
     }
 
-    // Ищем и кликаем по кнопке Calculate
-    @FindBy(xpath = "//*[contains(@id, 'calculateButton')]")
-    private WebElement calculateButton;
-
+    // Кликаем по кнопке Calculate
     public void calculateButtonClick() {
         calculateButton.click();
     }
 
-    // Ищем поле Answer и сверяем его значение с заданым нами
-    @FindBy(xpath = "//*[contains(@id, 'numberAnswerField')]")
-    private WebElement numberAnswer;
-
+    // Сверяем значение поля Answer с заданым нами значением
     public void numberAnswerValidation(String expected) {
         Assert.assertEquals(expected, numberAnswer.getAttribute("value"));
     }

@@ -18,18 +18,37 @@ public class PageObjectsNumberGame {
         this.driver = driver;
     }
 
-    // Ищем и кликаем по выпадашке Build
+    // Ищем выпадашку Build
     @FindBy(xpath = "//*[contains(@id, 'buildNumber')]")
     private WebElement selectBuild;
 
+    // Ищем нужный элемент выпадашки Build
+    @FindBy(xpath = "//*[contains(@id, 'buildNumber')] //*[contains(@value, '%s')]")
+    private WebElement selectedBuildItem;
+
+    // Ищем кнопку Roll the dice
+    @FindBy(xpath = "//*[contains(@id, 'rollDiceButton')]")
+    private WebElement rollTheDiceButton;
+
+    // Ищем input
+    @FindBy(xpath = "//*[contains(@id, 'numberGuess')]")
+    private WebElement numberGuess;
+
+    // Ищем кнопку Submit
+    @FindBy(xpath = "//*[contains(@id, 'submitButton')]")
+    private WebElement submitButton;
+
+    // Ищем label с ответом
+    @FindBy(xpath = "//*[contains(@id, 'feedbackLabel')] //i")
+    private WebElement feedbackLabel;
+
+
+    // Кликаем по выпадашке Build
     public void selectBuildClick() {
         selectBuild.click();
     }
 
-    // Ищем и кликаем по нужному элементу выпадашки Build
-    @FindBy(xpath = "//*[contains(@id, 'buildNumber')] //*[contains(@value, '%s')]")
-    private WebElement selectedBuildItem;
-
+    // Кликаем по нужному элементу выпадашки Build
     public void selectedItemBuildClick(String value) {
         // Используем Duration для указания времени ожидания
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -39,18 +58,12 @@ public class PageObjectsNumberGame {
         itemToClick.click();
     }
 
-    // Ищем и кликаем по кнопке Roll the dice
-    @FindBy(xpath = "//*[contains(@id, 'rollDiceButton')]")
-    private WebElement rollTheDiceButton;
-
+    // Кликаем по кнопке Roll the dice
     public void rollTheDiceButtonClick() {
         rollTheDiceButton.click();
     }
 
-    // Ищем и вводим значение в input
-    @FindBy(xpath = "//*[contains(@id, 'numberGuess')]")
-    private WebElement numberGuess;
-
+    // Вводим значение в input
     public void numberGuessInput(String input) {
         // Используем Duration для указания времени ожидания
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -59,18 +72,12 @@ public class PageObjectsNumberGame {
         numberGuess.sendKeys(input);
     }
 
-    // Ищем и кликаем по кнопке Submit
-    @FindBy(xpath = "//*[contains(@id, 'submitButton')]")
-    private WebElement submitButton;
-
+    // Кликаем по кнопке Submit
     public void submitButtonClick() {
         submitButton.click();
     }
 
-    // Ищем label с ответом и сверяем его значение с заданым нами
-    @FindBy(xpath = "//*[contains(@id, 'feedbackLabel')] //i")
-    private WebElement feedbackLabel;
-
+    // Сверяем значение label с заданым нами
     public void feedbackLabelValidation(String expected) {
         Assert.assertEquals(expected, feedbackLabel.getText());
     }
